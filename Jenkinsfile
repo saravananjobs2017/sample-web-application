@@ -45,7 +45,7 @@ pipeline{
                 {
               steps{
                   script{
-		 sh 'cp -r ../dev-sample-application-pipeline-v2/target .'
+		 sh 'cp -r ../dev-sample-application-pipeline-v2@2/target .'
                    sh 'docker build . -t saransdp/devops-work:$Docker_tag'
 		   withCredentials([string(credentialsId: 'docker_password', variable: 'docker_password')]) {
 				    
