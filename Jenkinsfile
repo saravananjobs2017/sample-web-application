@@ -46,7 +46,7 @@ pipeline{
               steps{
                   script{
 		 sh 'cp -r ../dev-sample-application-pipeline-v2@2/target .'
-                   sh 'docker build . -t saransdp/devops-work:$Docker_tag
+                   sh 'docker build . -t saransdp/devops-work:$Docker_tag'
 				    
 		   sh 'docker login -u saransdp -p Ammaappa@123'
 		   sh 'docker push saransdp/devops-work:$Docker_tag'
