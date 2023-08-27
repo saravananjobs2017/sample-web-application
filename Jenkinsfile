@@ -46,15 +46,13 @@ pipeline{
               steps{
                   script{
 		 sh 'cp -r ../dev-sample-application-pipeline-v2@2/target .'
-                   sh 'docker build . -t saransdp/devops-work:$Docker_tag'
-		   withCredentials([string(credentialsId: 'docker_password', variable: 'docker_password')]) {
+                   sh 'docker build . -t saransdp/devops-work:$Docker_tag
 				    
-				  sh 'docker login -u saransdp -p $docker_password'
-				  sh 'docker push saransdp/devops-work:$Docker_tag'
+		   sh 'docker login -u saransdp -p Ammaappa@123'
+		   sh 'docker push saransdp/devops-work:$Docker_tag'
 			}
                        }
                     }
-                 }
 		 
 		// stage('ansible playbook'){
 		// 	steps{
